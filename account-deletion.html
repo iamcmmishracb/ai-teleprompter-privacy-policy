@@ -56,30 +56,50 @@
 <h1>Account &amp; Data Deletion</h1>
 <p class="updated">App: Float Teleprompter (package: com.floatprompter.app) &nbsp;|&nbsp; Last updated: August 31, 2026</p>
 
-<p>Float Teleprompter lets you create an account using Firebase Authentication, with account-linked data stored in Firestore. If you'd like your account and associated data deleted, submit the form below and we'll process your request — you do not need the App installed on your device to do this.</p>
+<p>Float Teleprompter lets you create an account using Firebase Authentication, with account-linked data stored in Firestore. If you'd like your account and associated data deleted, fill out the form below and click Submit — it will open your own email app with everything pre-filled, so the request is sent from your email address. You do not need the App installed on your device to do this.</p>
 
 <h2>Submit a Deletion Request</h2>
-<form action="https://formsubmit.co/learneducamy@gmail.com" method="POST">
-  <input type="hidden" name="_subject" value="Account Deletion Request — Float Teleprompter">
-  <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_captcha" value="true">
-  <input type="hidden" name="_next" value="https://ai-teleprompter-privacy-policy-ac3en7j27.vercel.app/thank-you.html">
-
+<form id="deletionForm">
   <label for="name">Full Name</label>
   <input type="text" id="name" name="Name" required>
 
   <label for="email">Email address used for your account</label>
-  <input type="email" id="email" name="Account Email" required>
+  <input type="email" id="email" name="AccountEmail" required>
 
   <label for="accountid">Account ID (if known, optional)</label>
-  <input type="text" id="accountid" name="Account ID (optional)">
+  <input type="text" id="accountid" name="AccountID">
 
   <label for="message">Additional details (optional)</label>
   <textarea id="message" name="Message"></textarea>
 
   <button type="submit">Submit Deletion Request</button>
-  <p class="note">This form is powered by FormSubmit — your request is emailed directly to us at learneducamy@gmail.com. The first time this form is used, FormSubmit will send a one-time confirmation link to that inbox, which must be clicked once to activate delivery.</p>
+  <p class="note">Clicking Submit opens your device's default email app with a message addressed to learneducamy@gmail.com, pre-filled with the details above. You'll just need to hit Send from your own email account to complete the request.</p>
 </form>
+
+<script>
+  document.getElementById('deletionForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var accountId = document.getElementById('accountid').value.trim();
+    var message = document.getElementById('message').value.trim();
+
+    var subject = 'Account Deletion Request — Float Teleprompter';
+    var body =
+      'Full Name: ' + name + '\n' +
+      'Account Email: ' + email + '\n' +
+      'Account ID (optional): ' + (accountId || '-') + '\n' +
+      'Additional details: ' + (message || '-');
+
+    var mailtoLink =
+      'mailto:learneducamy@gmail.com' +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body);
+
+    window.location.href = mailtoLink;
+  });
+</script>
 
 <h2>Alternative: Email us directly</h2>
 <div class="box">
