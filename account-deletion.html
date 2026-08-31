@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Account & Data Deletion — Float Teleprompter</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+    line-height: 1.65;
+    color: #1a1a1a;
+    background: #fdfdfd;
+  }
+  h1 { font-size: 1.9rem; margin-bottom: 0.2rem; }
+  .updated { color: #666; font-size: 0.9rem; margin-bottom: 2rem; }
+  h2 { font-size: 1.2rem; margin-top: 2rem; border-bottom: 1px solid #eaeaea; padding-bottom: 6px; }
+  ul { padding-left: 1.3rem; }
+  li { margin-bottom: 0.5rem; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { text-align: left; padding: 8px 10px; border: 1px solid #e0e0e0; font-size: 0.95rem; }
+  th { background: #f5f5f5; }
+  a { color: #2563eb; }
+  .box { background: #f5f7fa; padding: 18px 20px; border-radius: 8px; margin: 1.2rem 0; }
+  form { background: #f5f7fa; padding: 22px; border-radius: 10px; margin: 1.2rem 0; }
+  label { display: block; font-weight: 600; margin-top: 14px; margin-bottom: 4px; font-size: 0.92rem; }
+  input, textarea, select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d0d5dd;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    box-sizing: border-box;
+  }
+  textarea { resize: vertical; min-height: 80px; }
+  button {
+    margin-top: 20px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  button:hover { background: #1d4ed8; }
+  .note { font-size: 0.85rem; color: #555; margin-top: 10px; }
+</style>
+</head>
+<body>
+
+<h1>Account &amp; Data Deletion</h1>
+<p class="updated">App: Float Teleprompter (package: com.floatprompter.app) &nbsp;|&nbsp; Last updated: August 31, 2026</p>
+
+<p>Float Teleprompter lets you create an account using Firebase Authentication, with account-linked data stored in Firestore. If you'd like your account and associated data deleted, submit the form below and we'll process your request — you do not need the App installed on your device to do this.</p>
+
+<h2>Submit a Deletion Request</h2>
+<form action="https://formsubmit.co/learneducamy@gmail.com" method="POST">
+  <input type="hidden" name="_subject" value="Account Deletion Request — Float Teleprompter">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="true">
+  <input type="hidden" name="_next" value="https://YOUR-DEPLOYED-DOMAIN/thank-you.html">
+
+  <label for="name">Full Name</label>
+  <input type="text" id="name" name="Name" required>
+
+  <label for="email">Email address used for your account</label>
+  <input type="email" id="email" name="Account Email" required>
+
+  <label for="accountid">Account ID (if known, optional)</label>
+  <input type="text" id="accountid" name="Account ID (optional)">
+
+  <label for="message">Additional details (optional)</label>
+  <textarea id="message" name="Message"></textarea>
+
+  <button type="submit">Submit Deletion Request</button>
+  <p class="note">This form is powered by FormSubmit — your request is emailed directly to us at learneducamy@gmail.com. The first time this form is used, FormSubmit will send a one-time confirmation link to that inbox, which must be clicked once to activate delivery.</p>
+</form>
+
+<h2>Alternative: Email us directly</h2>
+<div class="box">
+  <p>You can also email <strong>learneducamy@gmail.com</strong> directly with the subject line <strong>"Account Deletion Request"</strong>, including the email address or account ID used to sign up.</p>
+</div>
+
+<h2>What gets deleted</h2>
+<table>
+<tr><th>Data</th><th>Deleted?</th></tr>
+<tr><td>Firebase Authentication account (email, UID, login credentials)</td><td>Yes — permanently</td></tr>
+<tr><td>Account-linked data stored in Firestore (profile info, preferences)</td><td>Yes — permanently</td></tr>
+<tr><td>Recordings, scripts, and search history saved locally on your device</td><td>Not affected — delete these yourself in-app, or by uninstalling the App / clearing app storage</td></tr>
+<tr><td>Aggregated, non-identifiable analytics or crash logs already reported</td><td>May be retained in de-identified form for diagnostic purposes</td></tr>
+</table>
+
+<h2>Timeframe</h2>
+<p>Deletion requests are processed within 30 days of verification. You will receive an email confirmation once deletion is complete.</p>
+
+<h2>Contact</h2>
+<div class="box">
+  <p>For any questions about this process, contact us at:</p>
+  <p><strong>Email:</strong> learneducamy@gmail.com</p>
+</div>
+
+<p style="margin-top:2rem;"><a href="index.html">&larr; Back to Privacy Policy</a></p>
+
+</body>
+</html>
