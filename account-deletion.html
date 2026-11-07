@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy — Float Teleprompter</title>
+<title>Data Deletion — Float Teleprompter</title>
 <style>
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -16,101 +16,118 @@
   }
   h1 { font-size: 1.9rem; margin-bottom: 0.2rem; }
   .updated { color: #666; font-size: 0.9rem; margin-bottom: 2rem; }
-  h2 { font-size: 1.25rem; margin-top: 2.2rem; border-bottom: 1px solid #eaeaea; padding-bottom: 6px; }
+  h2 { font-size: 1.2rem; margin-top: 2rem; border-bottom: 1px solid #eaeaea; padding-bottom: 6px; }
   ul { padding-left: 1.3rem; }
   li { margin-bottom: 0.5rem; }
   table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
   th, td { text-align: left; padding: 8px 10px; border: 1px solid #e0e0e0; font-size: 0.95rem; }
   th { background: #f5f5f5; }
   a { color: #2563eb; }
-  .contact { background: #f5f7fa; padding: 16px 20px; border-radius: 8px; margin-top: 1rem; }
+  .box { background: #f5f7fa; padding: 18px 20px; border-radius: 8px; margin: 1.2rem 0; }
+  form { background: #f5f7fa; padding: 22px; border-radius: 10px; margin: 1.2rem 0; }
+  label { display: block; font-weight: 600; margin-top: 14px; margin-bottom: 4px; font-size: 0.92rem; }
+  input, textarea, select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d0d5dd;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    box-sizing: border-box;
+  }
+  textarea { resize: vertical; min-height: 80px; }
+  button {
+    margin-top: 20px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  button:hover { background: #1d4ed8; }
+  .note { font-size: 0.85rem; color: #555; margin-top: 10px; }
 </style>
 </head>
 <body>
 
-<h1>Privacy Policy</h1>
+<h1>Data Deletion</h1>
 <p class="updated">App: Float Teleprompter (package: com.floatprompter.app) &nbsp;|&nbsp; Last updated: November 7, 2026</p>
 
-<p>This Privacy Policy explains how Float Teleprompter ("the App", "we", "our") handles information when you use the App. We built the App to work with as little data collection as possible — most features run entirely on your device. The App does not require you to create an account or sign in.</p>
+<div class="box">
+  <p><strong>The current version of Float Teleprompter does not have accounts.</strong> Sign-up and sign-in have been removed, and the App does not collect your name or email address. Your recordings, scripts, and history are stored only on your device, so you can delete them yourself at any time by removing them in the App, clearing the App's storage, or uninstalling the App.</p>
+</div>
 
-<h2>1. Information We Collect</h2>
+<p>If you created an account in an <strong>earlier version</strong> of the App, you can request deletion of that account and its associated data using the form below. It will open your own email app with everything pre-filled, so the request is sent from your email address. You do not need the App installed on your device to do this.</p>
 
-<h3>a) Information you provide</h3>
-<ul>
-  <li><strong>No account required:</strong> The App has no sign-up or sign-in. We do not ask for, collect, or store your name, email address, or password.</li>
-  <li><strong>Search topics:</strong> When you type a topic or niche into the Ideas or Script Generator tabs, that text is sent to public, free third-party services (Wikipedia and DuckDuckGo) to fetch relevant content. We do not attach your identity to these lookups.</li>
-</ul>
+<h2>Request Deletion of an Earlier Account</h2>
+<form id="deletionForm">
+  <label for="name">Full Name</label>
+  <input type="text" id="name" name="Name" required>
 
-<h3>b) Information collected automatically</h3>
-<ul>
-  <li><strong>Advertising identifier (Android Ad ID):</strong> Used by Google AdMob to show ads and measure ad performance.</li>
-  <li><strong>Device and diagnostic data:</strong> Basic crash and performance data may be collected to help us fix bugs and improve stability.</li>
-</ul>
+  <label for="email">Email address used for your earlier account</label>
+  <input type="email" id="email" name="AccountEmail" required>
 
-<h3>c) Information stored only on your device</h3>
-<ul>
-  <li><strong>Camera and microphone:</strong> Used to record teleprompter videos. Recordings are saved to your device's local storage and are never uploaded to our servers.</li>
-  <li><strong>Generated scripts and search history:</strong> Saved locally on your device so you can view or delete them later. We do not have access to this data.</li>
-  <li><strong>Floating overlay:</strong> The "display over other apps" permission is used only to draw the teleprompter window on your screen. The App does not read, capture, or record the content of other apps or your screen, and no overlay data leaves your device.</li>
-  <li><strong>Storage access:</strong> Used only to save and retrieve your recorded videos and scripts from your device.</li>
-</ul>
+  <label for="accountid">Account ID (if known, optional)</label>
+  <input type="text" id="accountid" name="AccountID">
 
-<h2>2. Permissions Used by the App</h2>
+  <label for="message">Additional details (optional)</label>
+  <textarea id="message" name="Message"></textarea>
+
+  <button type="submit">Submit Deletion Request</button>
+  <p class="note">Clicking Submit opens your device's default email app with a message addressed to learneducamy@gmail.com, pre-filled with the details above. You'll just need to hit Send from your own email account to complete the request.</p>
+</form>
+
+<script>
+  document.getElementById('deletionForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var accountId = document.getElementById('accountid').value.trim();
+    var message = document.getElementById('message').value.trim();
+
+    var subject = 'Account Deletion Request — Float Teleprompter';
+    var body =
+      'Full Name: ' + name + '\n' +
+      'Account Email: ' + email + '\n' +
+      'Account ID (optional): ' + (accountId || '-') + '\n' +
+      'Additional details: ' + (message || '-');
+
+    var mailtoLink =
+      'mailto:learneducamy@gmail.com' +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body);
+
+    window.location.href = mailtoLink;
+  });
+</script>
+
+<h2>Alternative: Email us directly</h2>
+<div class="box">
+  <p>You can also email <strong>learneducamy@gmail.com</strong> directly with the subject line <strong>"Account Deletion Request"</strong>, including the email address or account ID used to sign up.</p>
+</div>
+
+<h2>What gets deleted</h2>
 <table>
-<tr><th>Permission</th><th>Why it's needed</th></tr>
-<tr><td>Camera</td><td>Recording teleprompter videos</td></tr>
-<tr><td>Microphone</td><td>Capturing audio during recording</td></tr>
-<tr><td>Storage / Media (Photos &amp; Videos)</td><td>Saving and accessing your recorded videos</td></tr>
-<tr><td>Internet</td><td>Fetching topic ideas and script content from Wikipedia/DuckDuckGo, and showing ads</td></tr>
-<tr><td>Display over other apps (overlay)</td><td>Showing the floating teleprompter window on top of other apps, such as your camera app, so you can read your script while recording</td></tr>
-<tr><td>Wake Lock</td><td>Keeping the screen on during a teleprompter session</td></tr>
-<tr><td>Advertising ID</td><td>Displaying and measuring ads via Google AdMob</td></tr>
+<tr><th>Data</th><th>Deleted?</th></tr>
+<tr><td>Earlier account data (email, display name, account ID, and any data linked to the account)</td><td>Yes — permanently, once your request is verified</td></tr>
+<tr><td>Recordings, scripts, and search history saved locally on your device</td><td>Not held by us — delete these yourself in-app, or by uninstalling the App / clearing app storage</td></tr>
+<tr><td>Aggregated, non-identifiable analytics or crash logs already reported</td><td>May be retained in de-identified form for diagnostic purposes</td></tr>
 </table>
 
-<h2>3. Third-Party Services</h2>
-<p>The App uses the following third-party services, each governed by its own privacy policy:</p>
-<ul>
-  <li><strong>Google AdMob</strong> — serves ads within the App. <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
-  <li><strong>Wikipedia (Wikimedia Foundation)</strong> — public content used to generate topic ideas and scripts. <a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy" target="_blank">Wikimedia Privacy Policy</a></li>
-  <li><strong>DuckDuckGo</strong> — public search results used for topic ideas and script content. <a href="https://duckduckgo.com/privacy" target="_blank">DuckDuckGo Privacy Policy</a></li>
-  <li><strong>Reddit</strong> — public trending posts shown for a given topic/niche. <a href="https://www.reddit.com/policies/privacy-policy" target="_blank">Reddit Privacy Policy</a></li>
-</ul>
-<p>These services may independently collect data such as IP address or device information when the App communicates with them. We do not control and are not responsible for their data practices.</p>
+<h2>Timeframe</h2>
+<p>Requests for earlier accounts are processed within 30 days of verification. You will receive an email confirmation once deletion is complete.</p>
 
-<h2>4. What We Do Not Do</h2>
-<ul>
-  <li>We do not sell your personal data.</li>
-  <li>We do not upload your recorded videos to any server.</li>
-  <li>We do not use AI providers or send your data to AI APIs — topic ideas and scripts are generated from public web content, not personal data.</li>
-  <li>We do not monitor, read, or collect what you do in other apps while the floating overlay is shown.</li>
-  <li>We do not access your contacts, location, or files unrelated to the App's recording features.</li>
-</ul>
-
-<h2>5. Data Retention</h2>
-<p>Recordings, scripts, and search history remain on your device until you delete them or uninstall the App. We do not keep copies of this data on our servers.</p>
-
-<h2>6. Accounts &amp; Data Deletion</h2>
-<p>The current version of the App does not support accounts, so there is no account to delete. All recordings, scripts, and history are stored only on your device and are removed when you delete them in the App, clear the App's storage, or uninstall the App.</p>
-<p>If you created an account in an earlier version of the App, you can ask us to delete that account and all associated data at any time, whether or not the App is still installed. See our <a href="account-deletion.html">Data Deletion page</a> or email <strong>learneducamy@gmail.com</strong> with the subject line "Account Deletion Request" from the email address you used. We will complete the deletion within 30 days of verifying your request.</p>
-
-<h2>7. Children's Privacy</h2>
-<p>The App is not directed at children under 13 (or the minimum age required in your country). We do not knowingly collect personal information from children.</p>
-
-<h2>8. Your Choices</h2>
-<ul>
-  <li>You can deny or revoke Camera, Microphone, or Storage permissions at any time in your device Settings — some features will not work without them.</li>
-  <li>You can opt out of personalized ads via your device's Ads Settings (Settings → Google → Ads → Opt out of Ads Personalization).</li>
-  <li>You can delete locally saved scripts, history, and recordings directly within the App or by clearing app storage in device Settings.</li>
-</ul>
-
-<h2>9. Changes to This Policy</h2>
-<p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Last updated" date.</p>
-
-<h2>10. Contact Us</h2>
-<div class="contact">
-  <p>If you have questions about this Privacy Policy, or wish to request deletion of data from an earlier account, contact us at:</p>
+<h2>Contact</h2>
+<div class="box">
+  <p>For any questions about this process, contact us at:</p>
   <p><strong>Email:</strong> learneducamy@gmail.com</p>
 </div>
+
+<p style="margin-top:2rem;"><a href="index.html">&larr; Back to Privacy Policy</a></p>
 
 </body>
 </html>
